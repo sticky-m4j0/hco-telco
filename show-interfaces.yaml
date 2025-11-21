@@ -5,13 +5,13 @@
 
   tasks:
     - name: Ejecutar show interface status
-      cisco.nxos.nxos_command:
+      ios_command:
         commands:
           - show interface status
       register: status_output
 
     - name: Ejecutar show interface description
-      cisco.nxos.nxos_command:
+      ios_command:
         commands:
           - show interface description
       register: desc_output
