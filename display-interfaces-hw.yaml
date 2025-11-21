@@ -1,10 +1,9 @@
 ---
 -name: Obtener estado de interfaces en switches Huawei CloudEngine
-  hosts: all
-  gather_facts: no
-  connection: ansible.netcommon.network_cli
+ hosts: all
+ gather_facts: no
 
-  tasks:
+ tasks:
     - name: Ejecutar comandos de estado de interfaces
     # Módulo para enviar comandos a CloudEngine
       community.network.ce_command:
