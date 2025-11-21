@@ -1,4 +1,4 @@
- name: Obtener estado de interfaces en switches Huawei CloudEngine
+ -name: Obtener estado de interfaces en switches Huawei CloudEngine
   hosts: all
   gather_facts: no
   connection: ansible.netcommon.network_cli
