@@ -1,12 +1,25 @@
-- name: Test AWX con switches Cisco
-  hosts: CISCO_IOS
+---
+- name: Obtener show interfaces de los Nexus
+  hosts: all
   gather_facts: no
-  tasks:
-    - name: Ejecutar comando show interfaces
-      ios_command:
-        commands:
-          - show interfaces
-      register: output
 
-    - debug:
-        var: output.stdout_lines
+  tasks:
+    - name: Ejecutar show interface status
+      cisco.nxos.nxos_command:
+        commands:
+          - show interface status
+      register: status_output
+
+    - name: Ejecutar show interface description
+      cisco.nxos.nxos_command:
+        commands:
+          - show interface description
+      register: desc_output
+
+    - name: Mostrar salidas del dispositivo
+      debug:
+        msg:
+          - "===== SHOW INTERFACE STATUS ====="
+          - "{{ status_output.stdout[0] }}"
+          - "===== SHOW INTERFACE DESCRIPTION ====="
+          - "{{ desc_output.stdout[0] }}"
