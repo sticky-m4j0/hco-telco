@@ -3,7 +3,7 @@
   gather_facts: no
   tasks:
     - name: Ejecutar comando show interfaces
-      cisco.ios.ios_command:
+      ios_command:
         commands:
           - show interfaces
       register: output
