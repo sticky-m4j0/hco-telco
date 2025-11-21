@@ -1,0 +1,12 @@
+- name: Test AWX con switches Cisco
+  hosts: CISCO_IOS
+  gather_facts: no
+  tasks:
+    - name: Ejecutar comando 'show interfaces'
+      cisco.ios.ios_command:
+        commands:
+          - show interfaces
+      register: output
+
+    - debug:
+        var: output.stdout_lines
