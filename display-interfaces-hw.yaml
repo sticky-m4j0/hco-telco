@@ -6,9 +6,9 @@
   tasks:
     - name: Ejecutar comandos de estado de interfaces
       ios_command:
-      commands:
-       - display interface brief
-       - display interface description
+        commands:
+           - display interface brief
+           - display interface description
       register: ce_int_status
 
     - name: Mostrar salida en texto (stdout_lines)
