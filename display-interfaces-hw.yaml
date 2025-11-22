@@ -6,7 +6,7 @@
   tasks:
     - name: Ejecutar comandos de estado de interfaces
     # Módulo para enviar comandos a CloudEngine
-     community.network.ce_command:
+     ios_command:
         commands:
           - display interface brief
           - display interface description
