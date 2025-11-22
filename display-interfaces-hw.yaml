@@ -5,11 +5,10 @@
 
   tasks:
     - name: Ejecutar comandos de estado de interfaces
-    # Módulo para enviar comandos a CloudEngine
-     ios_command:
-        commands:
-          - display interface brief
-          - display interface description
+      ios_command:
+      commands:
+       - display interface brief
+       - display interface description
       register: ce_int_status
 
     - name: Mostrar salida en texto (stdout_lines)
